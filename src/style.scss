@@ -1,0 +1,27 @@
+/* Ensure full height layout */
+html, body, #root, .app-container {
+    height: 100%; /* Full height */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Makes the content area expand to push footer down */
+  .app-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    flex: 1; /* This ensures the footer stays at the bottom */
+    padding-bottom: 2rem; /* Optional spacing */
+  }
+  
+  /* Footer styling */
+  footer {
+    background-color: var(--theme-background-color);
+    padding: 1rem;
+    text-align: center;
+  }
+  

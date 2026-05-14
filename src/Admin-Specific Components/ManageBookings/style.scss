@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+
+.manage-bookings {
+  padding: 2rem;
+  background-color: var(--theme-background-color);
+  color: var(--theme-sub-text-color);
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+
+  &__heading {
+    font-size: 2.5rem;
+    color: var(--theme-main-color);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__filter {
+    margin-bottom: 1.5rem;
+
+    input {
+      width: 300px;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid var(--theme-border-color);
+      border-radius: 0.5rem;
+      background-color: var(--theme-nav-background-color);
+      color: var(--theme-sub-text-color);
+      text-align: center;
+
+      &:focus {
+        border-color: var(--theme-main-color);
+        outline: none;
+      }
+    }
+  }
+
+  &__container {
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: var(--theme-nav-background-color);
+    box-shadow: var(--theme-box-shadow);
+    border-radius: 10px;
+    overflow: hidden;
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--theme-border-color);
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--theme-main-color);
+      color: var(--theme-sub-text-color);
+      text-transform: uppercase;
+    }
+
+    tr:nth-child(even) {
+      background-color: var(--theme-light-background);
+    }
+
+    td {
+      input {
+        padding: 0.5rem;
+        border: 1px solid var(--theme-border-color);
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease-in-out;
+
+      &.edit-button {
+        background-color: #007bff;
+        color: white;
+        margin-right: 5px;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+
+      &.delete-button {
+        background-color: #dc3545;
+        color: white;
+
+        &:hover {
+          background-color: #c82333;
+        }
+      }
+
+      &.save-button {
+        background-color: #28a745;
+        color: white;
+
+        &:hover {
+          background-color: #218838;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .manage-bookings {
+    padding: 1rem;
+
+    &__filter input {
+      width: 100%;
+    }
+
+    &__table {
+      overflow-x: auto;
+      display: block;
+    }
+  }
+}

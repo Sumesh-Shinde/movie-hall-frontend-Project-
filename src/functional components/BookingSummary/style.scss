@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.summary {
+  font-family: 'Roboto', sans-serif;
+  padding: 2rem;
+  background-color: var(--theme-background-color);
+  color: var(--theme-sub-text-color);
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  &__heading {
+    font-size: 2.4rem;
+    color: var(--theme-main-color);
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+
+  &__details {
+    margin-bottom: 2rem;
+    border: 1px solid var(--theme-border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: var(--theme-nav-background-color);
+
+    &__detail {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .summary__label {
+        font-weight: 500;
+        color: var(--theme-main-color);
+        font-size: 1.4rem;
+      }
+
+      .summary__value {
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: var(--theme-sub-text-color);
+      }
+    }
+  }
+
+  &__button {
+    background-color: var(--theme-main-color);
+    color: var(--theme-sub-text-color);
+    padding: 0.8rem 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--theme-button-hover-color);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .summary {
+    padding: 1rem;
+
+    &__heading {
+      font-size: 2rem;
+    }
+
+    &__details {
+      padding: 1rem;
+
+      &__detail {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+
+        .summary__label {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+
+    &__button {
+      font-size: 1.4rem;
+      padding: 0.6rem 1.5rem;
+    }
+  }
+}

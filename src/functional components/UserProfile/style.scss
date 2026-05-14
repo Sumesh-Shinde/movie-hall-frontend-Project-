@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+
+.user-profile {
+  padding: 2rem;
+  background-color: var(--theme-background-color);
+  color: var(--theme-sub-text-color);
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+    color: var(--theme-main-color);
+    margin-bottom: 1.5rem;
+  }
+
+  .user-info {
+    background-color: var(--theme-nav-background-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--theme-box-shadow);
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto 2rem;
+    
+    p {
+      font-size: 1.4rem;
+      margin: 0.5rem 0;
+      color: var(--theme-sub-text-color);
+    }
+
+    strong {
+      color: var(--theme-main-color);
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: var(--theme-main-color);
+    margin-bottom: 1rem;
+  }
+
+  .booking-history {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: var(--theme-box-shadow);
+    background-color: var(--theme-nav-background-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--theme-border-color);
+      font-size: 1.4rem;
+    }
+
+    th {
+      background-color: var(--theme-main-color);
+      color: var(--theme-sub-text-color);
+    }
+
+    tr:hover {
+      background-color: var(--theme-hover-background);
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    color: var(--theme-sub-text-color);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .user-profile {
+    padding: 1rem;
+  }
+
+  .user-info {
+    max-width: 90%;
+  }
+
+  .booking-history {
+    max-width: 95%;
+    font-size: 1.2rem;
+  }
+}

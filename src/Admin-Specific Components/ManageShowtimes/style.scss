@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+
+.manage-showtimes {
+  padding: 2rem;
+  background-color: var(--theme-background-color);
+  color: var(--theme-sub-text-color);
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+    color: var(--theme-main-color);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  select {
+    width: 300px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid var(--theme-border-color);
+    border-radius: 0.5rem;
+    background-color: var(--theme-nav-background-color);
+    color: var(--theme-sub-text-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+
+    &:focus {
+      border-color: var(--theme-main-color);
+      outline: none;
+    }
+  }
+
+  &__add-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    input {
+      width: 250px;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid var(--theme-border-color);
+      border-radius: 0.5rem;
+      background-color: var(--theme-nav-background-color);
+      color: var(--theme-sub-text-color);
+
+      &:focus {
+        border-color: var(--theme-main-color);
+        outline: none;
+      }
+    }
+
+    button {
+      background-color: var(--theme-main-color);
+      color: var(--theme-sub-text-color);
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: var(--theme-button-hover-color);
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: var(--theme-nav-background-color);
+    box-shadow: var(--theme-box-shadow);
+    border-radius: 10px;
+    overflow: hidden;
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--theme-border-color);
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--theme-main-color);
+      color: var(--theme-sub-text-color);
+      text-transform: uppercase;
+    }
+
+    img {
+      border-radius: 5px;
+      transition: transform 0.3s ease-in-out;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease-in-out;
+
+      &.manage-showtimes__delete-button {
+        background-color: #dc3545;
+        color: white;
+
+        &:hover {
+          background-color: #c82333;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .manage-showtimes {
+    padding: 1rem;
+
+    select {
+      width: 100%;
+    }
+
+    &__add-form {
+      flex-direction: column;
+      align-items: center;
+
+      input {
+        width: 100%;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+
+    &__table {
+      overflow-x: auto;
+      display: block;
+    }
+  }
+}

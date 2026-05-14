@@ -1,0 +1,100 @@
+.manage-movies {
+  padding: 2rem;
+  background-color: var(--theme-background-color);
+  color: var(--theme-sub-text-color);
+
+  &__heading {
+    font-size: 3rem;
+    color: var(--theme-main-color);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--theme-card-background-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+
+    input {
+      padding: 0.8rem;
+      font-size: 1.6rem;
+      border: 1px solid var(--theme-border-color);
+      border-radius: 0.5rem;
+      background-color: var(--theme-background-color);
+      color: var(--theme-text-color);
+    }
+
+    button {
+      background-color: var(--theme-main-color);
+      color: var(--theme-sub-text-color);
+      padding: 0.8rem 1.5rem;
+      font-size: 1.6rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      &:hover {
+        background-color: var(--theme-button-hover-color);
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+
+    th,
+    td {
+      padding: 1rem;
+      text-align: left;
+      border: 1px solid var(--theme-border-color);
+    }
+
+    th {
+      background-color: var(--theme-nav-background-color);
+      color: var(--theme-sub-text-color);
+    }
+
+    td {
+      background-color: var(--theme-card-background-color);
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1.4rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  }
+
+  &__edit-button {
+    background-color: var(--theme-main-color);
+    color: var(--theme-sub-text-color);
+
+    &:hover {
+      background-color: var(--theme-button-hover-color);
+    }
+  }
+
+  &__delete-button {
+    background-color: var(--theme-error-color);
+    color: var(--theme-sub-text-color);
+    margin-left: 1rem;
+
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
+}

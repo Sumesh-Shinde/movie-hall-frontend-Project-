@@ -1,0 +1,185 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+:root {
+  
+  --theme-background-color: #1a1a2e; 
+  --theme-main-color: #e94560; 
+  --theme-sub-text-color: #ffffff; 
+  --theme-nav-background-color: #16213e; 
+  --theme-button-hover-color: #0f3460;
+  --theme-border-color: #1f4068; 
+  --theme-error-color: #E53935;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  font-family: 'Roboto Slab', serif;
+}
+
+body {
+  background: var(--theme-background-color);
+  color: var(--theme-sub-text-color);
+  height: 100%;
+  line-height: 1.6;
+}
+
+#root {
+  height: 100%;
+}
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+ :root {
+   /* Theme Variables */
+   --theme-background-color: #0a0a0a; /* True Black - Cinematic Feel */
+   --theme-main-color: #ffcc00; /* Warm Gold - Premium Look */
+   --theme-accent-color: #00aaff; /* Electric Blue - High Contrast */
+   --theme-sub-text-color: #f5f5f5; /* Soft White - Sharp and Readable */
+   --theme-secondary-text-color: #c5c5c5; /* Light Gray - Less Important Text */
+   --theme-nav-background-color: #121212; /* Slightly lighter black for separation */
+   --theme-button-hover-color: #ffaa00; /* Smooth Transition Gold */
+   --theme-border-color: #292929; /* Soft Black for Borders */
+   --theme-card-background: #161616; /* Deep Charcoal - Stylish & Clean */
+   --theme-shadow-color: rgba(255, 204, 0, 0.3); /* Golden Glow Effect */
+   --theme-error-color: #ff4444; /* Bright Red for Errors */
+ }
+ 
+ * {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   scroll-behavior: smooth;
+ }
+ 
+ html {
+   font-size: 62.5%;
+   height: 100%;
+   font-family: 'Poppins', sans-serif;
+ }
+ 
+ body {
+   background: var(--theme-background-color);
+   color: var(--theme-sub-text-color);
+   height: 100%;
+   line-height: 1.6;
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ #root {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh; /* Ensures full-page height */
+ }
+ 
+ .main-content {
+   flex: 1; /* Pushes footer to the bottom */
+ }
+ 
+ /* Footer Styling */
+ .footer {
+   background-color: var(--theme-nav-background-color);
+   color: var(--theme-sub-text-color);
+   padding: 2rem 0;
+   font-size: 1.4rem;
+   margin-top: auto; /* Push footer to bottom */
+ 
+   &__content {
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 2rem;
+     flex-wrap: wrap;
+ 
+     &__logo {
+       flex: 1;
+ 
+       h2 {
+         font-size: 2.4rem;
+         color: var(--theme-main-color);
+         margin-bottom: 0.5rem;
+       }
+ 
+       p {
+         font-size: 1.4rem;
+         color: var(--theme-sub-text-color);
+       }
+     }
+ 
+     &__links {
+       flex: 1;
+ 
+       h3 {
+         font-size: 1.8rem;
+         margin-bottom: 1rem;
+         color: var(--theme-main-color);
+       }
+ 
+       ul {
+         list-style: none;
+         padding: 0;
+ 
+         li {
+           margin: 0.5rem 0;
+ 
+           a {
+             text-decoration: none;
+             color: var(--theme-sub-text-color);
+             transition: color 0.3s ease;
+ 
+             &:hover {
+               color: var(--theme-main-color);
+             }
+           }
+         }
+       }
+     }
+ 
+     &__social {
+       flex: 1;
+ 
+       h3 {
+         font-size: 1.8rem;
+         margin-bottom: 1rem;
+         color: var(--theme-main-color);
+       }
+ 
+       &__icons {
+         display: flex;
+         gap: 1rem;
+ 
+         a {
+           color: var(--theme-sub-text-color);
+           transition: color 0.3s ease;
+ 
+           &:hover {
+             color: var(--theme-main-color);
+           }
+         }
+       }
+     }
+   }
+ 
+   &__bottom {
+     text-align: center;
+     padding: 1rem 0;
+     background-color: var(--theme-border-color);
+ 
+     p {
+       margin: 0;
+       font-size: 1.2rem;
+       color: var(--theme-sub-text-color);
+     }
+   }
+ }
+ 

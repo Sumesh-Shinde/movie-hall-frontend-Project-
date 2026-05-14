@@ -1,0 +1,267 @@
+/* General Page Styling */
+.main-content {
+  background-color: var(--theme-background-color);
+  color: var(--theme-sub-text-color);
+  padding: 20px;
+}
+
+/* Movies Section */
+.movies {
+  &__heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--theme-main-color);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+
+  &__card {
+    background-color: var(--theme-card-background);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    max-width: 250px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    &__image {
+      width: 100%;
+      height: 360px; /* 9:16 aspect ratio */
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    &__details {
+      margin-top: 10px;
+    }
+
+    &__title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--theme-main-color);
+    }
+
+    &__description {
+      font-size: 0.9rem;
+      color: var(--theme-secondary-text-color);
+    }
+
+    &__button {
+      background: var(--theme-main-color);
+      color: var(--theme-background-color);
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-top: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+
+      &:hover {
+        background: var(--theme-button-hover-color);
+      }
+    }
+  }
+}
+
+/* Fullscreen Dark Overlay */
+/* Fullscreen Dark Overlay */
+// .modal {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   z-index: 1000;
+//   backdrop-filter: blur(8px);
+// }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.modal {
+  background: var(--theme-card-background);
+  border: 1px solid var(--theme-border-color);
+  box-shadow: 0 8px 16px var(--theme-shadow-color);
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px; /* Now the modal is smaller */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+
+/* Centered Modal Box */
+.modal__content {
+  background: var(--theme-card-background);
+  border: 1px solid var(--theme-border-color);
+  box-shadow: 0 8px 16px var(--theme-shadow-color);
+  border-radius: 12px;
+  padding: 16px;
+  width: 90%;
+  max-width: 400px; /* Compact box */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close Button (X) */
+.modal__close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: var(--theme-sub-text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Modal Title */
+.modal__title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--theme-main-color);
+  margin-bottom: 10px;
+}
+
+/* Showtime Selection Box */
+.showtime-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--theme-background-color);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--theme-border-color);
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    background: var(--theme-nav-background-color);
+  }
+}
+
+/* Radio Button */
+.showtime-container input[type="radio"] {
+  accent-color: var(--theme-accent-color);
+  transform: scale(1.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Showtime Label */
+.showtime-container label {
+  color: var(--theme-sub-text-color);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* Proceed Button */
+.modal__button {
+  background: var(--theme-main-color);
+  color: var(--theme-background-color);
+  font-size: 1.1rem;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+
+  &:hover {
+    background: var(--theme-button-hover-color);
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile Fix */
+@media (max-width: 600px) {
+  .modal__content {
+    width: 95%;
+    max-width: 350px;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .movies__grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .movies__card {
+    max-width: 200px;
+  }
+
+  .movies__card__image {
+    height: 320px; /* Adjusting for smaller screens */
+  }
+
+  .modal__content {
+    width: 95%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movies__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .movies__card {
+    max-width: 100%;
+  }
+
+  .movies__card__image {
+    height: 280px;
+  }
+
+  .modal__content {
+    width: 95%;
+    max-width: 360px;
+  }
+}
