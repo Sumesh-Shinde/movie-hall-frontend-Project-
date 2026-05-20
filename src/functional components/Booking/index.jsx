@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from "../../axios";
 import './style.scss';
 
 const Booking = () => {
@@ -29,19 +29,22 @@ const Booking = () => {
     }
 
     // ✅ Fetch movie details
-    axios.get(`http://localhost:8080/api/movies/${movieId}`)
+    // axios.get(`http://localhost:8080/api/movies/${movieId}`)
+    axios.get(`/movies/${movieId}`)
       .then(response => setMovie(response.data))
       .catch(error => console.error('Error fetching movie details:', error));
 
     // ✅ Fetch showtime details
-    axios.get(`http://localhost:8080/api/showtimes/${showtimeId}`, {
+    // axios.get(`http://localhost:8080/api/showtimes/${showtimeId}`, {
+    axios.get(`/showtimes/${showtimeId}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(response => setShowtime(response.data))
     .catch(error => console.error('Error fetching showtime:', error));
 
     // ✅ Fetch already booked seats
-    axios.get(`http://localhost:8080/api/bookings/showtime/${showtimeId}/booked-seats`, {
+    // axios.get(`http://localhost:8080/api/bookings/showtime/${showtimeId}/booked-seats`, {
+    axios.get(`/bookings/showtime/${showtimeId}/booked-seats`, {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(response => {
@@ -81,7 +84,8 @@ const Booking = () => {
     };
 
     // ✅ Send booking request with Authorization token
-    axios.post('http://localhost:8080/api/bookings', bookingData, {
+    // axios.post('http://localhost:8080/api/bookings', bookingData, {
+    axios.post('/bookings', bookingData, {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(response => {

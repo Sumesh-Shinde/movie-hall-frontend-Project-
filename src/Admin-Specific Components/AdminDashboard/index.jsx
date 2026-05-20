@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../axios";
 import "./style.scss";
 
 const AdminDashboard = () => {
@@ -10,7 +10,8 @@ const AdminDashboard = () => {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/admin/dashboard")
+    // axios.get("http://localhost:8080/api/admin/dashboard")
+     axios.get("/admin/dashboard")
       .then(response => {
         setDashboardStats(response.data);
       })

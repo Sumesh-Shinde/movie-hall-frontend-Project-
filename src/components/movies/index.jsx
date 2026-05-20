@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from "../../axios";
 import './style.scss';
 
 const Movies = () => {
@@ -12,13 +12,15 @@ const Movies = () => {
   const userId = sessionStorage.getItem('userId');
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/movies')
+    // axios.get('http://localhost:8080/api/movies')
+    axios.get('/movies')
       .then(response => setMovies(response.data))
       .catch(error => console.error('Error fetching movies:', error));
   }, []);
 
   const fetchShowtimes = (movieId) => {
-    axios.get(`http://localhost:8080/api/showtimes/movie/${movieId}`)
+    // axios.get(`http://localhost:8080/api/showtimes/movie/${movieId}`)
+     axios.get(`/showtimes/movie/${movieId}`)
       .then(response => setShowtimes(prev => ({ ...prev, [movieId]: response.data })))
       .catch(error => console.error('Error fetching showtimes:', error));
   };

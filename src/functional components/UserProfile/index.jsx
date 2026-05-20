@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../axios";
 import "./style.scss";
 
 const UserProfile = () => {
@@ -18,7 +18,8 @@ const UserProfile = () => {
     }
 
     // ✅ Fetch User Info
-    axios.get(`http://localhost:8080/api/users/${userId}`, {
+    // axios.get(`http://localhost:8080/api/users/${userId}`, {
+      axios.get(`/users/${userId}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((res) => setUser(res.data))
@@ -28,7 +29,8 @@ const UserProfile = () => {
     });
 
     // ✅ Fetch User's Booking History
-    axios.get(`http://localhost:8080/api/bookings/user/${userId}`, {
+    // axios.get(`http://localhost:8080/api/bookings/user/${userId}`, {
+     axios.get(`/bookings/user/${userId}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((res) => {

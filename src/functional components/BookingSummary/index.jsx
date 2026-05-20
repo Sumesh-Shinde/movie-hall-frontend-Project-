@@ -14,7 +14,8 @@ const BookingSummary = () => {
 
   useEffect(() => {
     if (bookingId) {
-      fetch(`http://localhost:8080/api/bookings/${bookingId}`)
+      // fetch(`http://localhost:8080/api/bookings/${bookingId}`)
+      fetch(`https://movie-hall-api.onrender.com/api/bookings/${bookingId}`)
         .then((response) => response.json())
         .then((data) => {
           setBookingData(data);

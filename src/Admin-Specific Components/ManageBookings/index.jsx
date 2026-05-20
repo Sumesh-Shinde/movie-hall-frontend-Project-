@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../axios";
 import "./style.scss";
 
 const ManageBookings = () => {
@@ -14,7 +14,8 @@ const ManageBookings = () => {
   }, []);
 
   const fetchBookings = () => {
-    axios.get("http://localhost:8080/api/bookings")
+    // axios.get("http://localhost:8080/api/bookings")
+    axios.get("/bookings")
       .then(response => {
         setBookings(response.data);
         setFilteredBookings(response.data);
@@ -28,7 +29,8 @@ const ManageBookings = () => {
   };
 
   const handleSaveSeats = (id) => {
-    axios.put(`http://localhost:8080/api/bookings/${id}`, { selectedSeats: newSeats })
+    // axios.put(`http://localhost:8080/api/bookings/${id}`, { selectedSeats: newSeats })
+    axios.put(`/bookings/${id}`, { selectedSeats: newSeats })
       .then(() => {
         alert("Seats updated successfully!");
         setEditingBooking(null);
@@ -39,7 +41,8 @@ const ManageBookings = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this booking?")) {
-      axios.delete(`http://localhost:8080/api/bookings/${id}`)
+      // axios.delete(`http://localhost:8080/api/bookings/${id}`)
+      axios.delete(`/bookings/${id}`)
         .then(() => {
           alert("Booking deleted successfully!");
           fetchBookings();

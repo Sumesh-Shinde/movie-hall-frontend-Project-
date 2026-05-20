@@ -1,7 +1,9 @@
-import axios from "axios";
+import axios from "../../axios";
 
-const API_URL = "http://localhost:8080/api/showtimes";
-const API_URL_MOVIES = "http://localhost:8080/api/movies";
+// const API_URL = "http://localhost:8080/api/showtimes";
+// const API_URL_MOVIES = "http://localhost:8080/api/movies";
+const API_URL = "/showtimes";
+const API_URL_MOVIES = "/movies";
 
 export const fetchMovies = async () => axios.get(API_URL_MOVIES);
 
